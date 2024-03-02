@@ -1,5 +1,9 @@
 
 /*** Spinner Start ***/
+
+body {
+    background-color: #f5f5f5; /* Very light gray */
+}
 #spinner {
     opacity: 0;
     visibility: hidden;
@@ -495,3 +499,10 @@
 }
 /*** Footer End ***/
 
+.box
+{
+position :relative;
+width: 200px;
+height : 200px;
+transform-style: preserve-3d;
+}

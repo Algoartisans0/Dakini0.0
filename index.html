@@ -52,6 +52,62 @@
             .blink:hover {
                 transform: scale(1.2);
             }
+
+            @keyframes spin {
+                0% {
+                    transform: rotateY(0deg);
+                }
+                100% {
+                    transform: rotateY(360deg);
+                }
+            }
+        
+            /* Apply the animation to the images */
+            .service-item img {
+                animation: spin 10s infinite linear;
+                transform-style: preserve-3d; /* Ensure 3D rendering */
+                perspective: 1000px; /* Set the perspective for 3D effect */
+            }
+
+            .box {
+                padding: 20px; /* add padding for better visibility */
+                position: relative;
+                width: 200px;
+                height: 200px;
+                transform-style: preserve-3d;
+                animation: animate 20s linear infinite;
+            }
+            
+            @keyframes animate {
+                0% {
+                    transform: perspective(1000px) rotateY(0deg);
+                }
+            
+                100% {
+                    transform: perspective(1000px) rotateY(360deg);
+                }
+            }
+            
+            .box span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform-origin: center;
+                transform-style: preserve-3d;
+                transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+                -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+            }
+            
+            .box span img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }            
         </style>
     
     </head>
@@ -218,11 +274,24 @@
             </div>
         </div>
         <!-- Featurs End -->
-
         </div>
 
-        
-        <!-- Hero End -->
+        <div class="container-fluid vesitable py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="box">
+                        <span style="--i:1"><img src="img/vegetable-item-6.jpg"></span>
+                        <span style="--i:2"><img src="img/vegetable-item-6.jpg"></span>
+                        <span style="--i:3"><img src="img/vegetable-item-6.jpg"></span>
+                        <span style="--i:4"><img src="img/vegetable-item-6.jpg"></span>
+                        <span style="--i:5"><img src="img/vegetable-item-6.jpg"></span>
+                        <span style="--i:6"><img src="img/vegetable-item-6.jpg"></span>
+                        <span style="--i:7"><img src="img/vegetable-item-6.jpg"></span>
+                        <span style="--i:8"><img src="img/vegetable-item-6.jpg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
